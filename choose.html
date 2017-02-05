@@ -25,29 +25,94 @@
               <div class="row text-center">
                   <h3 class="text-uppercase col-lg-12 choose"></h3>
               </div>
+              <div class="row text-center col-lg-12">
+                  <div class="ordermenu">
+                      <img src="" alt="">
+                  </div>
+              </div>
           </div>
 
-          <div class="ordermenu text-center col-lg-12 ">
-              <img src="" alt="">
-          </div>
+
       </section>
 
       <section id="order">
           <div class="container">
-            <div class="row text-center">
-                <h3 class="text-uppercase col-lg-12" style="color:white">CHOOSE DRINK</h3>
-            </div>
-            <div class="orderItem text-center">
-                <div class="input-group">
-                    <span class="input-group-addon">飲料</span>
-                    <input type="text" class="form-control" name="" value="" placeholder="新增要訂的飲料">
+              <div class="row text-center">
+                  <h3 class="text-uppercase col-lg-12" style="color:white;padding:30px">CHOOSE  DRINK</h3>
+              </div>
+            <form action="javascript:neworderItem()">
+                <div class="row text-center col-lg-12">
+                    <div class="col-lg-3 col-lg-offset-3">
+                        <div class="input-group inputOrder">
+                            <span class="input-group-addon">飲料</span>
+                            <input type="text" class="form-control" id="drink" placeholder="新增要訂的飲料" required>
+                        </div>
+                        <div class="radio">
+                            <label class="radio-inline"  >
+                              <input type="radio" name="sugerradio" value="無糖" required>無糖
+                            </label>
+                            <label class="radio-inline">
+                              <input type="radio" name="sugerradio" value="半糖" required>半糖
+                            </label>
+                            <label class="radio-inline">
+                              <input type="radio" name="sugerradio" value="全糖" required>全糖
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="input-group inputOrder">
+                            <span class="input-group-addon">價錢</span>
+                            <input type="text" class="form-control" id="drink_price" placeholder="新增飲料的價錢" required>
+                        </div>
+                        <div class="radio">
+                            <label class="radio-inline">
+                              <input type="radio" name="iceradio" value="去冰" required>去冰
+                            </label>
+                            <label class="radio-inline">
+                              <input type="radio" name="iceradio" value="少冰" required>少冰
+                            </label>
+                            <label class="radio-inline">
+                              <input type="radio" name="iceradio" value="正常" required>正常
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 text-left inputOrder">
+                        <button class="btn btn-primary">enter</button>
+
+                    </div>
                 </div>
-            </div>
-
+              </form>
           </div>
-
       </section>
 
+      <section>
+        <div class="container">
+            <div class="row text-center">
+                <h3 class="text-uppercase col-lg-12" style="color:white;padding-top:50px">DRINK</h3>
+            </div>
+
+            <div class="row">
+                <div class="orderbag col-lg-8 col-lg-offset-2 text-center">
+                  <table class="table" id="orderItem">
+                    <thead>
+                      <tr>
+                          <th>名稱</th>
+                          <th>價錢</th>
+                          <th>甜度</th>
+                          <th>冰塊</th>
+                          <th>付錢</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+      </section>
   </div>
 
 
