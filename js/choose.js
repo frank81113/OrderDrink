@@ -37,7 +37,7 @@ function getMenuItem() {
 
 function viewMenu() {
     $(".choose").text(menu.name);
-    $(".ordermenu img").attr("src","img/"+menu.id+"/menu.jpg");
+    $(".ordermenu img").attr("src","img/"+menu.id+"/Menu.jpg");
 }
 
 
