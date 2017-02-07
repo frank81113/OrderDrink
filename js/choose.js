@@ -142,6 +142,7 @@ function EditMode($this,id) {
     }
     else if (($this.attr("pay"))==="true") {
 
+        
     }
     else {
       var input = $("<input type=\"text\" autofocus>" ).val($this.text());
