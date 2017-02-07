@@ -68,6 +68,10 @@ header img:hover{
 .inputOrder{
   padding: 8px;
 }
+#view{
+  position: relative;
+}
+
 .radio{
   font-size: 1.5em;
 }

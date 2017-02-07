@@ -63,7 +63,7 @@
                     <div class="col-lg-3">
                         <div class="input-group inputOrder">
                             <span class="input-group-addon">價錢</span>
-                            <input type="text" class="form-control" id="drink_price" placeholder="新增飲料的價錢" required>
+                            <input type="number" class="form-control" id="drink_price"  placeholder="新增飲料的價錢" required>
                         </div>
                         <div class="radio">
                             <label class="radio-inline">
@@ -78,12 +78,13 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 text-left inputOrder">
+                    <div class="col-lg- text-left inputOrder">
                         <button class="btn btn-primary">enter</button>
-
+                        <button type="button" id="view" class="btn btn-danger" onclick="">view</button>
                     </div>
                 </div>
               </form>
+
           </div>
       </section>
 
@@ -98,11 +99,11 @@
                   <table class="table" id="orderItem">
                     <thead>
                       <tr>
-                          <th>名稱</th>
+                          <th>品名</th>
                           <th>價錢</th>
                           <th>甜度</th>
                           <th>冰塊</th>
-                          <th>付錢</th>
+                          <th>付款</th>
                       </tr>
                     </thead>
                     <tbody>

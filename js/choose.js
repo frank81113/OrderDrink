@@ -16,7 +16,7 @@ $(document).ready(function(){
   setInterval(function () {
     $("#menu").removeClass("fadingIn").addClass("fadIn");
   },300);
-  getMenuItem ();
+  getMenuItem();
   viewMenu();
 
 
@@ -27,7 +27,7 @@ function goback() {
   location.assign(url);
 }
 
-function getMenuItem () {
+function getMenuItem() {
     var url = location.href;
     var temp = url.split("?");
     var menuitem = temp[1].split("&");
@@ -37,7 +37,7 @@ function getMenuItem () {
 
 function viewMenu() {
     $(".choose").text(menu.name);
-    $(".ordermenu img").attr("src","./img/"+menu.id+"/Menu.jpg");
+    $(".ordermenu img").attr("src","img/"+menu.id+"/menu.jpg");
 }
 
 
@@ -103,17 +103,21 @@ function addorderItem(id){
               .text(drinks[id].drink_ice)
             )
             .append($("<td>")
-              .text(PayImg)
+                .attr("pay","false")
+                  .text(PayImg)
+                    .css("color","#EB89B5")
             )
       );
 }
 
 
+
 $(document).on( "dblclick",'#orderItem tbody td',function(e) {
       var $this=$(this);
+      console.log($this);
       var id = $($this.parent()).attr('id');
       if(state===false){
-        EditMode($this);
+        EditMode($this,id);
         //e.stopPropagation();
       }
       else {
@@ -129,17 +133,29 @@ function toggleEditMode(){
   state=!state;
 }
 
-function EditMode($this) {
-    var input = $("<input type=\"text\" autofocus>" ).val($this.text());
-    $this.replaceWith(input);
-    toggleEditMode();
-    $("#orderItem input").keydown(function (e){
-      if (e.keyCode === 27||e.keyCode === 13){
-        e.preventDefault();
-        ViewMode();
-      }
+function EditMode($this,id) {
+    if (($this.attr("pay"))==="false") {
+          td = $("<td></td>").text("O").css("color","#A6ED8E").attr("pay","true");
+          $this.replaceWith(td);
+          //drinks[id].drink_pay = true;
 
-    });
+    }
+    else if (($this.attr("pay"))==="true") {
+
+    }
+    else {
+      var input = $("<input type=\"text\" autofocus>" ).val($this.text());
+      $this.replaceWith(input);
+      //drinks[id].drink_pay = true;
+      toggleEditMode();
+      $("#orderItem input").keydown(function (e){
+        if (e.keyCode === 27||e.keyCode === 13){
+          e.preventDefault();
+          ViewMode();
+        }
+
+      });
+    }
     //console.log(state);
 }
 
